@@ -1,8 +1,10 @@
+/* eslint-disable @next/next/no-img-element */
 'use client';
 
-import { cn } from '@/lib/utils'
-import { usePathname } from 'next/navigation'
+import { cn } from '@/lib/utils';
+import { usePathname } from 'next/navigation';
 
+//
 const STEPS = [
   {
     name: 'Step 1: Add image',
@@ -19,8 +21,9 @@ const STEPS = [
     description: 'Review your final design',
     url: '/preview',
   },
-]
+];
 
+//
 const Steps = () => {
   const pathname = usePathname()
 
@@ -55,6 +58,7 @@ const Steps = () => {
                 <span className='flex-shrink-0'>
                   <img
                     src={imgPath}
+                    alt='steps image'
                     className={cn(
                       'flex h-20 w-20 object-contain items-center justify-center',
                       {
