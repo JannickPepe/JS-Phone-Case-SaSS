@@ -1,12 +1,13 @@
 import { db } from '@/db';
 import { notFound } from 'next/navigation';
+import DesignConfiguator from './DesignConfiguator';
 
 
 interface PageProps {
     searchParams: {
         [key: string]: string | string[] | undefined
     }
-}
+};
 
 
 const Page = async ({ searchParams }: PageProps) => {
@@ -28,9 +29,10 @@ const Page = async ({ searchParams }: PageProps) => {
     const { imageUrl, width, height } = configuration
 
     return (
-        <>
-        </>
-    )
+        <div>
+            <DesignConfiguator configId={configuration.id} imageDimensions={{width, height}} imageUrl={imageUrl} />
+        </div>
+    );
 
 };
 
